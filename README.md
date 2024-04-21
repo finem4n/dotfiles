@@ -1,2 +1,2 @@
-# dotfiles
-My personal Linux dotfiles
+# fineman's dotfiles
+![Gruvbox Toystory Meme](./readme/gruvbox_toystory.png)
