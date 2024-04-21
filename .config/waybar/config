@@ -1,0 +1,65 @@
+// vim: foldmethod=marker
+
+[{
+
+"output": "eDP-1",
+"include": "~/.config/waybar/config-global",
+"position": "left", 
+
+"modules-left":	[
+			"idle_inhibitor",
+			"sway/scratchpad",
+                    	"sway/workspaces", 
+			"sway/mode",
+],
+
+"modules-center": [
+			"sway/window",
+],
+
+"modules-right": [
+			"tray",
+                    	"pulseaudio", 
+			"pulseaudio#source",
+                    	"network", 
+                    	"bluetooth",
+                    	"cpu", 
+                    	"memory", 
+                    	"temperature", 
+                    	"backlight", 
+                    	"battery",
+                    	"clock"
+],
+
+},
+{
+
+"output": ["HDMI-A-1", "DP-1", "HEADLESS-1"],
+"include": "~/.config/waybar/config-global",
+"position": "right", 
+
+"modules-left": [
+			"idle_inhibitor",
+			"sway/scratchpad",
+                        "sway/workspaces", 
+			"sway/mode",
+],
+
+"modules-center": [
+			"sway/window",
+],
+
+"modules-right": [
+			"tray",
+                    	"pulseaudio", 
+			"pulseaudio#source",
+                    	"network", 
+                    	"bluetooth",
+                    	"cpu", 
+                    	"memory", 
+                    	"temperature", 
+                    	"battery",
+                    	"clock"
+],
+ 
+}]
