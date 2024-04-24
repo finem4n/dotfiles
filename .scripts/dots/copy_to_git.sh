@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _source="$HOME/.config"
-_dest="../../.config"
+_dest="$(dirname "$0")/../../.config"
 
 items=(
 	"waybar"
@@ -9,7 +9,7 @@ items=(
 )
 
 for item in "${items[@]}"; do
-	fileSource="$_source/$item"
-	fileDest="$_dest/$item"
+	fileSource="$_source/$item/."
+	fileDest="$_dest/$item/"
 	cp -R $fileSource $fileDest
 done
