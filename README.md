@@ -5,3 +5,4 @@
 - [ ] kitty
 - [ ] sway
 - [ ] zsh
+- [x] waybar
