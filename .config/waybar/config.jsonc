@@ -32,6 +32,13 @@
 	"clock"
 ],
 
+// {{{ PulseAudio
+"pulseaudio": {
+	"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1% && $HOME/.scripts/progressbar.sh --volume 'eDP-1'",
+	"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1% && $HOME/.scripts/progressbar.sh --volume 'eDP-1'",
+},
+// }}}
+
 },
 {
 
@@ -63,5 +70,12 @@
 	"battery",
 	"clock"
 ],
- 
+
+// {{{ PulseAudio
+"pulseaudio": {
+	"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1% && $HOME/.scripts/progressbar.sh --volume 'HDMI-A-1'",
+	"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1% && $HOME/.scripts/progressbar.sh --volume 'HDMI-A-1'",
+},
+// }}}
+
 }]

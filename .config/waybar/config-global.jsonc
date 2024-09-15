@@ -30,8 +30,8 @@
 				"󱩕",
 				"󱩖",
 				"󰛨"],
-	"on-scroll-down":	"brightnessctl set 1%- && $HOME/.scripts/progressbar.sh --brightness",
-	"on-scroll-up":		"brightnessctl set +1% && $HOME/.scripts/progressbar.sh --brightness",
+	"on-scroll-down":	"brightnessctl set 1%- && $HOME/.scripts/progressbar.sh --brightness 'eDP-1'",
+	"on-scroll-up":		"brightnessctl set +1% && $HOME/.scripts/progressbar.sh --brightness 'eDP-1'",
 	"tooltip": 		false,
 },
 // }}}
