@@ -4,10 +4,13 @@
 ## TODO
 ### Configs
 - [ ] kitty
+- [ ] mako
 - [ ] sway
 - [ ] zsh
+- [x] bemenu (via wrapper script)
 - [x] waybar
 
 ### Scripts
 - [ ] create_symlinks.sh
+- [x] bemenu-wrapper.sh
 - [x] progressbar.sh
