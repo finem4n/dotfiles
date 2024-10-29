@@ -13,4 +13,5 @@
 ### Scripts
 - [ ] create_symlinks.sh
 - [x] bemenu-wrapper.sh
+- [x] bemenu-audio_switcher
 - [x] progressbar.sh
