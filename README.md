@@ -6,7 +6,7 @@ Friendship ended with [Gruvbox Material](https://github.com/sainnhe/gruvbox-mate
 [Wallpaper sources](./.config/wallpapers/sources.md)
 
 ## TODO
-### Configs
+### Configs - kanagawa
 - [ ] kitty
 - [ ] mako 
 	- [ ] maybe swaync would be better?
@@ -14,6 +14,7 @@ Friendship ended with [Gruvbox Material](https://github.com/sainnhe/gruvbox-mate
 - [ ] zsh
 - [ ] bemenu (via wrapper script)
 - [ ] waybar
+- [x] hyprlock
 
 ### Scripts
 - [ ] create_symlinks.sh
