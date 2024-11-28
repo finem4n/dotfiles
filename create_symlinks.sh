@@ -7,3 +7,13 @@
 
 # TODO 
 # check environement; if termux then do different paths etc
+
+case "$(uname -o)" in
+  *inux)
+    echo "Linux";;
+  *ndroid)
+    echo "Android";;
+  *)
+    echo "Undefined OS"
+    exit 1;;
+esac
