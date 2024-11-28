@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # NOTE 
 # when creating symlinks take an absolute path for source, e.g.
