@@ -1,0 +1,23 @@
+# vim:foldmethod=marker
+
+auto-reload yes
+reload-time 90
+
+# Color scheme {{{ 
+# 256 colors doesn't apply to color names - they are taken from terminal
+# default in first column means term foreground and in second - terminal background
+
+color background		default		default
+color listnormal		default		default
+color listnormal_unread		green		default
+color listfocus			black		yellow
+color listfocus_unread		black		yellow
+color info			white		black
+color article			default		default
+
+# Highlights
+highlight article "^(Feed|Link):.*$"		yellow		default		bold
+highlight article "^(Title|Date|Author):.*$"	yellow		default		bold
+highlight article "https?://[^ ]+"		green		default		underline
+highlight article "\\[[0-9]+\\]"		green 		default 	bold
+# }}}
