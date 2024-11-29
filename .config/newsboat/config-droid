@@ -2,4 +2,4 @@ browser		browser-wrapper.sh
 
 # Files path
 cache-file /data/data/com.termux/files/home/storage/shared/syncthing/apps/newsboat/cache.db
-include /data/data/com.termux/files/home/storage/shared/syncthing/apps/newsboat/config-shared
+include config-shared
