@@ -2,6 +2,8 @@
 # vim:foldmethod=marker
 # fineman's script
 
+# FIX block bemenu when in fullscreen 
+
 # {{{ styling explanation
 # --bdr border color
 # --tb prompt background color
