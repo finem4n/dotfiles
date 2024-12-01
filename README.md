@@ -17,6 +17,7 @@ Friendship ended with [Gruvbox Material](https://github.com/sainnhe/gruvbox-mate
 - [ ] bemenu (via wrapper script)
 - [ ] waybar
 - [x] hyprlock
+- [x] keyd
 
 ### Scripts
 - [ ] create_symlinks.sh
