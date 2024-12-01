@@ -1,0 +1,75 @@
+[main]
+
+capslock = overload(control, esc)
+
+leftcontrol = layer(hhkblike_layer)
+rightcontrol = layer(hhkblike_layer)
+
+leftalt = leftmeta
+leftmeta = leftalt
+
+leftshift = leftshift
+rightshift = rightshift
+
+mouse1 = layer(layer_mouse)
+mouse2 = mouse1
+mouseforward = toggle(normies_mouse_layout)
+
+[layer_mouse]
+mouse2 = mouse2
+middlemouse = macro(C-v)
+rightmouse = macro(leftmeta+d)
+
+[hhkblike_layer]
+
+tab = capslock
+
+q = previoussong
+w = nextsong
+e = playpause
+
+a = volumedown
+s = volumeup
+d = mute
+f = micmute
+
+h = left
+j = down
+k = up
+l = right
+
+y = home
+u = pagedown
+i = pageup
+o = end
+
+[ = brightnessdown
+] = brightnessup
+
+1 = f1
+2 = f2
+3 = f3
+4 = f4
+5 = f5
+6 = f6
+7 = f7
+8 = f8
+9 = f9
+0 = f10
+- = f11
+= = f12
+
+[almost_normies_layout]
+
+capslock = leftcontrol
+leftcontrol = capslock
+
+leftalt = leftmeta
+leftmeta = leftalt
+
+leftshift = leftshift
+rightshift = rightshift
+
+[normies_mouse_layout]
+mouse1 = mouse1
+mouse2 = mouse2
