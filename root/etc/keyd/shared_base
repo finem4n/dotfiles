@@ -62,10 +62,10 @@ o = end
 [almost_normies_layout]
 
 capslock = leftcontrol
-leftcontrol = capslock
+leftcontrol = esc
 
-leftalt = leftmeta
-leftmeta = leftalt
+leftalt = leftalt
+leftmeta = leftmeta
 
 leftshift = leftshift
 rightshift = rightshift
