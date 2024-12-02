@@ -3,6 +3,8 @@
 auto-reload yes
 reload-time 90
 
+max-items 100
+
 # Color scheme {{{ 
 # 256 colors doesn't apply to color names - they are taken from terminal
 # default in first column means term foreground and in second - terminal background
