@@ -1,7 +1,6 @@
 [global]
 
 overload_tap_timeout = 500
-layer_indicator = 1
 
 [main]
 
