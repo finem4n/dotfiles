@@ -1,10 +1,8 @@
 [global]
 
-overload_tap_timeout = 500
-
 [main]
 
-capslock = overload(control, esc)
+capslock = leftcontrol
 
 leftcontrol = layer(hhkblike_layer)
 rightcontrol = layer(hhkblike_layer)
@@ -15,18 +13,14 @@ leftmeta = leftalt
 leftshift = leftshift
 rightshift = rightshift
 
-mouse1 = layer(layer_mouse)
-mouse2 = mouse1
-mouseforward = toggle(normies_mouse_layout)
-
-[layer_mouse]
-mouse2 = mouse2
-middlemouse = macro(C-v)
-rightmouse = macro(leftmeta+d)
+mouseforward = micmute
 
 [hhkblike_layer]
 
+\ = toggle(gaming_layout)
+
 tab = capslock
+[ = esc
 
 q = previoussong
 w = nextsong
@@ -47,8 +41,8 @@ u = pagedown
 i = pageup
 o = end
 
-[ = brightnessdown
-] = brightnessup
+, = brightnessdown
+. = brightnessup
 
 1 = f1
 2 = f2
@@ -63,10 +57,9 @@ o = end
 - = f11
 = = f12
 
-[almost_normies_layout]
+[gaming_layout]
 
 capslock = leftcontrol
-leftcontrol = esc
 
 leftalt = leftalt
 leftmeta = leftmeta
@@ -74,6 +67,7 @@ leftmeta = leftmeta
 leftshift = leftshift
 rightshift = rightshift
 
-[normies_mouse_layout]
-mouse1 = mouse1
-mouse2 = mouse2
+e = up
+s = left
+d = down
+f = right
