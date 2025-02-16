@@ -139,12 +139,13 @@
 },
 // }}} 
 
-// {{{ Network
+//  TODO  change names
 "network": {
 	"format-wifi": "󰤯",
 	"format-disconnected":"󰤫",
-	"format-disabled":"󰤮",
+	"format-linked":"test",
 	"format-ethernet":"󰈀",
+	"format-disabled":"󰤮",
 
 	"tooltip-format":"subject name to change when on ethernet {ifname} via {gwaddr} 󰈀",
 	"tooltip-format-wifi":"ESSID: {essid}\nFrequency: {frequency} GHz\nStrength: {signalStrength}%\nIP: {ipaddr}",
@@ -153,7 +154,6 @@
 	"on-click-right": "rfkill toggle wifi",
 	"on-click":"kitty --title 'Floating Kitty nmtui' --detach nmtui connect",
 },
-// }}}
 
 // {{{ Privacy
 "privacy#screenshare": {

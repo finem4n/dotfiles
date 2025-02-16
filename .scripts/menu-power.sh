@@ -7,7 +7,7 @@ if pgrep -x bemenu; then
 	killall bemenu
 else	
 	menu=$( echo -e "󱅞 Lock\n󰒲 Suspend\n󰍃 Logout\n󰜉 Reboot\n󰐥 Shutdown" | \
-		bemenu --list 5 --prompt "What you wanna do?" | \
+		bemenu --list 5 --fn 'JetBrains Mono 20' --line-height 55 --ch 40 --cw 3 --prompt "What you wanna do?" | \
 		awk '{print tolower($2)}' )
 
 	case $menu in 
