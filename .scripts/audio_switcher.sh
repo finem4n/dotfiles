@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # vim:foldmethod=marker
 # dmenu pipewire audio switcher by Konrad Marciniak aka fineman
 # https://github.com/finem4n/dmenu_audio_switcher

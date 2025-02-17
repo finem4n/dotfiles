@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source $HOME/.scripts/bemenu-opts.sh
-
 
 if pgrep -x bemenu; then
 	killall bemenu

@@ -15,8 +15,8 @@ The following commands are "jump" commands: "'", "\`", "G", "/", "?", "n", "N", 
 ![Jumps](assets/list_of_jumps.png)
 
 ### Prev/Next jump
-- `n_CTRL-i` - previous jump (in normal mode)
-- `n_CTRL-o` - next jump 
+- `n_CTRL-o` - previous jump (in normal mode)
+- `n_CTRL-i` - next jump 
 - `ng;` - jump to n-th older postion in jump list
 - `ng,` - jump to n-th newer postion in jump list
 

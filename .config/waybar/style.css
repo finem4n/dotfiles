@@ -217,7 +217,7 @@ window#waybar {
 }
 
 #battery {
-	padding: 2px 0px;
+	padding: 2px 0px 4px 0px;
 	color: @fg0;
 }
 
@@ -234,6 +234,6 @@ window#waybar {
 #clock { 
 	background-color: @fg0;
 	color: @bg_dim;
-	margin: 2px 0px 0px 0px;
+	padding: 2px 0px 0px 0px;
 	font-size: 16px;
 }

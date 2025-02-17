@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 playing=$(playerctl -a status | grep -c Playing)
 if [ $playing -eq 0 ]; then

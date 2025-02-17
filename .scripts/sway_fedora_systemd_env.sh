@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # fineman's config
 # taken from Fedora Sway and their /usr/libexec/sway-systemd/session.sh
 # Since session.sh fixed almost all my issues related to starting sway through GDM, I just did a little cleanup and added a few variables for my needs.
