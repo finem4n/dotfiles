@@ -1,16 +1,12 @@
 program_options:
-  tray: true              # Show tray icon
-  notify: true           # Enable notifications
-  automount: true        # Enable automatic mounting
-  file_manager: xdg-open # Program to open mounted directories
-
-# device_config:
-#   # Example: Special options for specific devices
-#   - id_uuid: "your-device-uuid"
-#     options: [noexec, nodev]
-#     ignore: false
-#     automount: false
+  tray: auto
+  automount: false
+  notify: true
+  file_manager: xdg-open
+  terminal: 'alacritty --working-directory'
+  # password_prompt:
 
 notifications:
-  timeout: 1.5           # Notification timeout in seconds
-  device_mounted: 5      # Show mount notifications for 5 seconds
+  timeout: 1.5
+
+  device_mounted: 5
