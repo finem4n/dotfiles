@@ -63,4 +63,4 @@ export BEMENU_OPTS="--ignorecase \
 		--af '#d4be98' \
 		--scb '#1b1b1b' \
 		--scf '#504945' \
-		--fn 'JetBrains Mono 12' "
+		--fn 'JetBrainsMono Nerd Font 12' "

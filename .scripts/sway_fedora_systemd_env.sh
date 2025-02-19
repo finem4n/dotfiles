@@ -18,8 +18,6 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 
 export MOZ_ENABLE_WAYLAND=1
 
-# TODO  add BEMENU_OPTS or write wrapper-drun.sh and wrapper-dmenu.sh 
-
 # TEST  if it properly sets paddles
 export SDL_GAMECONTROLLERCONFIG="03007f6ec82d00001030000011010000,8BitDo Pro 2 Wired Controller,a:b0,b:b1,x:b3,y:b4,back:b10,guide:b12,start:b11,leftstick:b13,rightstick:b14,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:a5,righttrigger:a4,paddle1:b2,paddle2:b5,crc:6e7f,platform:Linux"
 # export SDL_GAMECONTROLLERCONFIG="0300e9dac82d00001030000011010000,8BitDo Pro 2 Wired Controller,a:b0,b:b1,x:b3,y:b4,back:b10,guide:b12,start:b11,leftstick:b13,rightstick:b14,leftshoulder:b6,rightshoulder:b7,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:a5,righttrigger:a4,paddle1:b2,paddle2:b5,crc:6e7f,platform:Linux"

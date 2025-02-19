@@ -2,6 +2,9 @@
 
 # TODO add colors
 # TODO learn to better format outputs
+#
+# zmienic nazwe pliku
+# TODO przeniesc do folderu app/scripts
 
 function omz_custom_plugins {
 	echo "Git pulling custom Oh My Zsh plugins"

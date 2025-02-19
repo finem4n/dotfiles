@@ -8,6 +8,7 @@
 
 "modules-left":	[
 	"idle_inhibitor",
+	"custom/mako",
 	"group/privacygroup",
 	"sway/scratchpad",
 	"sway/workspaces", 
@@ -48,6 +49,7 @@
 
 "modules-left": [
 	"idle_inhibitor",
+	"custom/mako",
 	"group/privacygroup",
 	"sway/scratchpad",
         "sway/workspaces", 

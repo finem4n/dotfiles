@@ -1,12 +1,9 @@
 // vim: foldmethod=marker
 // fineman's config
 
-// for all options look in: 
+// for all options check out: 
 // https://github.com/Alexays/Waybar/tree/master/man
 // https://github.com/Alexays/Waybar/wiki/
-
-// TODO 
-// add MPRIS if rotation of this module is allowed 
 
 {
 "reload_style_on_change": true,
@@ -16,7 +13,7 @@
 
 "fixed-center": false,
 
-// {{{ Backlight
+// Backlight {{{
 "backlight": {
 	"format":		"{icon}",
 	"format-icons":		["󰛩",
@@ -36,7 +33,7 @@
 },
 // }}}
 
-// {{{ Battery
+// Battery {{{
 "battery": {
 	"states": {
 		"warning": 30,
@@ -47,7 +44,7 @@
 
 	"format": "{capacity}\n{icon}",
 	"format-charging": "{capacity}\n󰂄", 
-	//  NOTE  you can add additional format-{power-status}, just check /sys/class/power_supply/<bat>/status and replace {power-status} with given output
+	// NOTE  you can add additional format-{power-status}, just check /sys/class/power_supply/<bat>/status and replace {power-status} with given output
 
 	"format-full": "{capacity}\n󰂄",
 	"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -79,7 +76,7 @@
 	"on-click-right": "rfkill toggle bluetooth"
 },
 
-// {{{ Clock
+// Clock {{{
 "clock": {
 	"format": "{:%H\n%M}",
 	"tooltip": true,
@@ -104,17 +101,16 @@
 },	
 // }}}
 
-// {{{ CPU
+// CPU {{{
 "cpu": {
 	"interval": 10,
         "format": "{usage}\n󰍛",
         "tooltip": true,
-        
-	"on-click": "kitty --title 'Floating Kitty btop' --detach btop",
+	"on-click": "alacritty -T 'Floating Term btop' -e btop"
 },
 // }}} 
 
-// {{{ Idle inhibitor
+// Idle inhibitor {{{
 "idle_inhibitor": {
 	"format": "{icon}",
 	"format-icons": {
@@ -125,17 +121,30 @@
 },
 // }}} 
 
-// {{{ Memory
+// Mako {{{
+"custom/mako": {
+	"exec": "echo \"{\\\"alt\\\": \\\"$(makoctl mode)\\\"}\"",
+	"on-click": "~/.scripts/waybar_mako_cycle.sh",
+	"signal": 11,
+	"format": "{icon}",
+	"format-icons": {
+			"default": "󰂚",
+			"dnd": "󰂛",
+			"unmuted": "󰂞",
+	},
+	"return-type": "json",
+	"tooltip": "false",
+},
+// }}}
+
+// Memory {{{
 "memory": {
 	"interval": 10,
 
 	"format": "{percentage}\n{swapPercentage}\n󰧑",
 
 	"tooltip": true,
-	"tooltip-format": "RAM:\nUsed: {used} GiB\nAvailable: {avail} GiB\n\nSwap:\nUsed: {swapUsed} GiB\nAvailable: {swapAvail} GiB",
-	
-	// TODO  add memory preset for btop
-        "on-click": "kitty --title 'Floating Kitty btop' --detach btop",
+	"tooltip-format": "RAM:\nUsed: {used} GiB\nAvailable: {avail} GiB\n\nSwap:\nUsed: {swapUsed} GiB\nAvailable: {swapAvail} GiB",	
 },
 // }}} 
 
@@ -151,11 +160,11 @@
 	"tooltip-format-wifi":"ESSID: {essid}\nFrequency: {frequency} GHz\nStrength: {signalStrength}%\nIP: {ipaddr}",
 	"tooltip-format-disconnected":  "Disconnected",
 
+	"on-click":"alacritty -T 'Floating Term nmtui' -e nmtui connect",
 	"on-click-right": "rfkill toggle wifi",
-	"on-click":"kitty --title 'Floating Kitty nmtui' --detach nmtui connect",
 },
 
-// {{{ Privacy
+// Privacy {{{
 "privacy#screenshare": {
 	"icon-spacing": 0,
 	"icon-size": 18,
@@ -191,7 +200,7 @@
 },
 // }}}
 
-// {{{ PulseAudio
+// PulseAudio {{{
 "pulseaudio": {
         "format": "{icon}",
         "format-muted": "󰖁",
@@ -210,8 +219,8 @@
 	    "phone": "noname7",
         },
 
-        //"on-click": "kitty --title 'Floating Kitty pulsemixer' --detach pulsemixer",
-        "on-click": "flatpak run org.pulseaudio.pavucontrol -t 3",
+        "on-click": "flatpak run com.saivert.pwvucontrol &>/dev/null",
+        //"on-click": "alacritty -T 'Floating Term pulsemixer' -e ~/.local/bin/pulsemixer",
 	"on-click-right": "pactl set-sink-mute 0 toggle && $HOME/.scripts/progressbar.sh --volume-mute",
 
 	"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1% && $HOME/.scripts/progressbar.sh --volume",
@@ -226,8 +235,8 @@
 	"format-source": "",
 	"format-source-muted": "",
 
-        //"on-click": "kitty --title 'Floating Kitty pulsemixer' --detach pulsemixer",
-        "on-click": "flatpak run org.pulseaudio.pavucontrol -t 4",
+        "on-click": "flatpak run com.saivert.pwvucontrol &>/dev/null",
+        //"on-click": "alacritty -T 'Floating Term pulsemixer' -e ~/.local/bin/pulsemixer",
 	"on-click-right": "pactl set-source-mute 0 1 && $HOME/.scripts/progressbar.sh --mic-mute",
 
 	"on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1% && $HOME/.scripts/progressbar.sh --mic-volume",
@@ -237,7 +246,7 @@
 },
 // }}}
 
-// {{{ Sway
+// Sway {{{
 "sway/mode": {
 	"rotate": 90,
 	"tooltip": false,
@@ -247,8 +256,8 @@
 
 "sway/scratchpad": {
     "format": "{icon}",
-    "format-icons": ["", "", ""],
-    "show-empty": false,
+    "format-icons": ["", "", ""],
+    "show-empty": true,
 
     "tooltip": true,
     "tooltip-format": "{app}: {title}",
@@ -270,7 +279,7 @@
 },
 // }}}
 
-// {{{ Temperature
+// Temperature {{{
 "temperature": { 
 	"thermal-zone": 5, // zone no. 5 is the closest to what btop shows me
 	"critical-threshold": 80,
@@ -282,12 +291,11 @@
 
 	"tooltip": false,
 
-	// TODO  add temp preset for btop
-        "on-click": "kitty --title 'Floating Kitty btop' --detach btop",
+	"on-click": "alacritty -T 'Floating Term btop' -e btop"
 }, 
 // }}}
 
-// {{{ Tray
+// Tray {{{
 "tray": {
 	"icon-size": 20,
 	"show-pasive-items": true,

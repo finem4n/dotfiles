@@ -7,6 +7,6 @@ program_options:
   # password_prompt:
 
 notifications:
-  timeout: 1.5
+  timeout: 3
 
-  device_mounted: 5
+  device_mounted: 10
