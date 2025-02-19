@@ -1,0 +1,62 @@
+# Theming
+layer=overlay
+icons=1
+markup=1
+
+border-size=3
+
+# Gruvbox Material
+# background-color=#282828
+# border-color=#e78a4e
+# text-color=#d4be98
+# progress-color=#3b4439
+
+# Kanagawa.nvim
+background-color=#1F1F28
+border-color=#FF5D62
+text-color=#DCD7BA
+progress-color=#223249
+
+# Notification settings
+default-timeout=10000
+max-visible=7
+max-history=14
+
+history=1
+
+# Notification actions
+actions=1
+
+on-notify=none
+
+# Modes settings
+[mode=dnd]
+invisible=1
+on-notify=none
+
+[mode=unmuted]
+on-notify=exec mpv /home/fineman/syncthing/apps/alerts/mgs_V_alert.opus
+
+# Apps settings 
+[app-name=""]
+default-timeout=10000
+
+# Allows for specifying on which output notification will pop up. Useful for e.g. waybar.
+[app-name=eDP-1]
+output=eDP-1
+anchor=top-center
+invisible=0
+on-notify=none
+
+[app-name=HDMI-A-1]
+output=HDMI-A-1
+anchor=top-center
+invisible=0
+on-notify=none
+
+[app-name=focused]
+# If you forgor what it does, check progressbar.sh
+output=
+anchor=top-center
+on-notify=none
+invisible=0
