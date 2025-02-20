@@ -1,49 +1,8 @@
 #!/usr/bin/env bash
 # vim:foldmethod=marker
 # dmenu pipewire audio switcher by Konrad Marciniak aka fineman
-# https://github.com/finem4n/dmenu_audio_switcher
 
-# {{{ BEMENU_OPTS
-export BEMENU_OPTS="--ignorecase \
-		--prefix '>>>' \
-		--no-spacing \
-		--wrap \
-		--fixed-height \
-		--accept-single \
-		--binding vim \
-		--scrollbar autohide \
-		--vim-esc-exits \
-		--center \
-		--grab \
-		--border 2 \
-		--line-height 20 \
-		--ch 20 \
-		--cw 2 \
-		--monitor -1 \
-		--no-overlap \
-		--margin 0 \
-		--width-factor 0.4 \
-		--bdr '#e78a4e' \
-		--tb '#282828' \
-		--tf '#d4be98' \
-		--fb '#282828' \
-		--ff '#d4be98' \
-		--cb '#e78a4e' \
-		--cf '#d4be98' \
-		--nb '#282828' \
-		--nf '#d4be98' \
-		--hb '#3b4439' \
-		--hf '#d4be98' \
-		--fbb '#ffffff' \
-		--fbf '#000000' \
-		--sb '#e78a4e' \
-		--sf '#282828' \
-		--ab '#32302f' \
-		--af '#d4be98' \
-		--scb '#1b1b1b' \
-		--scf '#504945' \
-		--fn 'JetBrains Mono 12' "
-# }}}
+source ~/.scripts/bemenu-opts.sh
 
 if pgrep -x bemenu; then
 	killall bemenu

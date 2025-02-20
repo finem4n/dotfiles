@@ -4,10 +4,6 @@
 
 source $HOME/.scripts/bemenu-opts.sh
 
-# FIX block bemenu when in fullscreen 
-# TODO add options to paste (especially if i want to write wrapper for keepass cli) to focus window like in: 
-# https://www.reddit.com/r/hyprland/comments/11k0uo4/autopaste_using_cliphist_wlcopy_and_wlpaste/
-
 if [ "$#" -ne 1 ]; then
     echo "Illegal number of parameters"
     exit

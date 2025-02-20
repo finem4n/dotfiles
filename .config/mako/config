@@ -28,6 +28,9 @@ history=1
 actions=1
 
 on-notify=none
+on-button-left=exec ~/.scripts/mako_menu.sh --actions
+# NOTE cannot open actions after restore. See:
+# https://github.com/emersion/mako/issues/525
 
 # Modes settings
 [mode=dnd]

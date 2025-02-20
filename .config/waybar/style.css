@@ -4,6 +4,8 @@
 /*padding/margin: up right down left*/
 
 /*Colors*/
+
+/*Gruvbox Material*/
 @define-color bg_dim		#1b1b1b;
 @define-color bg0 		#282828;
 @define-color bg1 		#32302f;
@@ -17,6 +19,13 @@
 @define-color green		#a9b665;
 @define-color blue		#7daea3;
 @define-color gray2		#a89984;
+
+/*kanagawa.nvim*/
+@define-color fujiWhite		#DCD7BA;
+@define-color sumiInk1		#1F1F28;
+@define-color boatYellow2	#C0A36E;
+@define-color surimiOrange	#FFA066;
+
 
 * {
 	all: unset;
@@ -34,17 +43,26 @@ tooltip label {
 }
 
 window#waybar {
-	background-color: @bg_dim;
+	background-color: @sumiInk1;
 }
 
 #idle_inhibitor { 
 	padding: 3px 0px; 
 	color: @fg0;
+	box-shadow: inset -3px 0px;
 }
 
 #idle_inhibitor.activated { 
 	background-color: @fg0;
 	color: @bg0;
+	box-shadow: inset -3px 0px;
+}
+
+#custom-mako {
+	padding: 2px 0px; 
+	margin: 4px 0px; 
+	color: @surimiOrange;
+	box-shadow: inset -3px 0px;
 }
 
 #privacy {
