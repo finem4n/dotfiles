@@ -49,20 +49,20 @@ window#waybar {
 #idle_inhibitor { 
 	padding: 3px 0px; 
 	color: @fg0;
-	box-shadow: inset -3px 0px;
+	/*box-shadow: inset -3px 0px;*/
 }
 
 #idle_inhibitor.activated { 
 	background-color: @fg0;
 	color: @bg0;
-	box-shadow: inset -3px 0px;
+	/*box-shadow: inset -3px 0px;*/
 }
 
 #custom-mako {
-	padding: 2px 0px; 
-	margin: 4px 0px; 
-	color: @surimiOrange;
-	box-shadow: inset -3px 0px;
+	padding: 3px 0px; 
+	/*margin: 4px 0px; */
+	background-color: @surimiOrange;
+	/*box-shadow: inset -3px 0px;*/
 }
 
 #privacy {
