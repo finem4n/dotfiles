@@ -41,8 +41,8 @@ u = pagedown
 i = pageup
 o = end
 
-, = brightnessdown
-. = brightnessup
+z = brightnessdown
+x = brightnessup
 
 1 = f1
 2 = f2
