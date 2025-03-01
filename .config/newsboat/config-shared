@@ -5,6 +5,16 @@ reload-time 90
 
 max-items 100
 
+run-on-startup select-tag
+
+# bind-key q select-tag feedlist
+# bind-key q quit tagselection
+
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+
 # Color scheme {{{ 
 # 256 colors doesn't apply to color names - they are taken from terminal
 # default in first column means term foreground and in second - terminal background

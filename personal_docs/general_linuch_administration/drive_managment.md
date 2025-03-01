@@ -1,3 +1,7 @@
+# Genral
+`df -h` - get available space
+`du -hs /path/to/directory` - get size of a dir
+
 ## Trim
 ### Verifying trim support
 `lsblk --discard`

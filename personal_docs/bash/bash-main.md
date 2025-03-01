@@ -1,5 +1,8 @@
 # ToC
 
+# General 
+after `Ctrl-z` do `fg` enter
+
 ## One liners
 ### Difference between && and ;
 `&&` if the first command fails the second WON'T run  
