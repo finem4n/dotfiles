@@ -29,6 +29,8 @@
 	"cpu", 
 	"memory", 
 	"temperature", 
+	"sway/language",
+	"keyboard-state",
 	"battery",
 	"clock"
 ],
@@ -69,6 +71,7 @@
 	"cpu", 
 	"memory", 
 	"temperature", 
+	"keyboard-state",
 	"battery",
 	"clock"
 ],
@@ -109,6 +112,7 @@
 	"cpu", 
 	"memory", 
 	"temperature", 
+	"keyboard-state",
 	"battery",
 	"clock"
 ],
@@ -149,6 +153,7 @@
 	"cpu", 
 	"memory", 
 	"temperature", 
+	"keyboard-state",
 	"battery",
 	"clock"
 ],

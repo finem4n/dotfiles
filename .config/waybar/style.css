@@ -234,6 +234,18 @@ window#waybar {
 	color: @fg0;
 }
 
+#language {
+	color: @fujiWhite;
+}
+
+#keyboard-state {
+	color: @fujiWhite;
+}
+
+#keyboard-state label.locked {
+	background-color: @fg0;
+}
+
 #battery {
 	padding: 2px 0px 4px 0px;
 	color: @fg0;

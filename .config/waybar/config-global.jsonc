@@ -117,9 +117,32 @@
 		"activated": "󰛊",
         	"deactivated": "󰾫",
 	},
-	"tooltip":		false,
+	"tooltip": false,
 },
 // }}} 
+
+// Keyboard language {{{
+"sway/language": {
+    "format": "{short}",
+    "tooltip": false,
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+},
+// }}}
+
+// Keyboard state {{{
+"keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": {
+        "numlock": "N {icon}",
+        "capslock": "C {icon}"                                                                                                                                                       
+    },
+    "format-icons": {
+        "locked": "",
+        "unlocked": ""
+    }
+},
+// }}}
 
 // Mako {{{
 "custom/mako": {
