@@ -24,6 +24,10 @@ The following commands are "jump" commands: "'", "\`", "G", "/", "?", "n", "N", 
 `gf` - open file under cursor in neovim. Helpful in markdown.
 `gx` - open link under cursor with default OS's handler (xdg-open in Linux), e.g. opens www link in browser.
 
+# Folds
+- `zM` - open all folds
+- `zR` - close all folds
+
 # Selection
 ## Misc. examples
 - `yiw` - yank inside the word
