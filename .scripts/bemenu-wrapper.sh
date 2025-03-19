@@ -10,7 +10,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 # Cliphist isn't packaged for Fedora and I don't like putting executables in /usr/local/bin/ when I'm the only user
-export PATH=$PATH:$HOME/git/swayapps/cliphist/v0-5-0/
+export PATH=$PATH:$HOME/git/swayapps/cliphist/v0-6-1/
 
 # Check if bemenu is already running. If true then kill bemenu. (Toggle Bemenu)
 if pgrep -x bemenu; then
