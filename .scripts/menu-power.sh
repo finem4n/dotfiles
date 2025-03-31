@@ -20,9 +20,11 @@ else
 			swaymsg exit
 			;;
 		reboot)
+			$HOME/git/swayapps/cliphist/v0-5-0/cliphist wipe
 			reboot
 			;;
 		shutdown)
+			$HOME/git/swayapps/cliphist/v0-5-0/cliphist wipe
 			poweroff
 			;;
 	esac

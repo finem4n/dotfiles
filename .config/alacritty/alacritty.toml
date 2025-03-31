@@ -100,7 +100,11 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:
 # TODO: turn off things I do not like
 [keyboard]
 bindings = [
+# Default bindings and my modifications to them
 { key = "Escape", mods = "Control|Shift", mode = "~Search", action = "ToggleViMode" },
 { key = "Space", mods = "Control|Shift", mode = "~Search", action = "None" },
+
+# Purely defined by me
+{ key = "Enter", mods = "Super|Shift", action = "CreateNewWindow" },
 ]
 

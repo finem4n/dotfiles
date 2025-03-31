@@ -10,6 +10,6 @@ then
 	title=$(playerctl metadata title)
 	artist=$(playerctl metadata --format "{{ artist }}")
 	
-	notify-send -a focused -h string:x-canonical-private-synchronous:"playerctl_notify" "$player_status on $player" "$title\n$artist"
+	notify-send -a focused -t 1000 -h string:x-canonical-private-synchronous:"playerctl_notify" "$player_status on $player" "$title\n$artist"
 fi
 

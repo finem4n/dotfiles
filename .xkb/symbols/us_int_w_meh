@@ -1,0 +1,18 @@
+# Sources:
+# https://github.com/swaywm/sway/wiki#load-a-modified-custom-xkb-keymap-xmodmap-equivalent
+# https://www.charvolant.org/doug/xkb/html/node5.html#SECTION00053300000000000000
+# https://wiki.archlinux.org/title/X_keyboard_extension
+
+partial modifier_keys
+
+xkb_symbols "meh" {
+    # define a base layout to inherit
+    include "us(intl)"
+
+    # The lines below were spit out by ChatGPT. I tried searching for sources, but with my limited time I couldn't find anything helpful. Not even in Arch wiki :'( 
+    key <LCTL> {
+        type="ONE_LEVEL",
+        symbols[Group1] = [ ISO_Level5_Shift ],
+        actions[Group1] = [ SetMods(modifiers=Shift+Control+Alt) ]
+    };
+};
