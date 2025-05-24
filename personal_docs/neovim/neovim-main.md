@@ -32,3 +32,8 @@ The following commands are "jump" commands: "'", "\`", "G", "/", "?", "n", "N", 
 ## Misc. examples
 - `yiw` - yank inside the word
 - `yaw` - yank around the word - that one will include brackets, etc.
+
+# Macros
+Start recording with q  
+Run with @  
+Repeat latest with @@

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO Add cargo
+
 function omz_custom_plugins {
 	echo "Git pulling custom Oh My Zsh plugins"
 	echo ""

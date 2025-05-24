@@ -269,7 +269,7 @@
 },
 // }}}
 
-// Sway {{{
+// Sway
 "sway/mode": {
 	"rotate": 90,
 	"tooltip": false,
@@ -297,10 +297,102 @@
 },
 
 "sway/workspaces": {
+	"format": "{name}\n{windows}",
 	"disable-scroll": true,
 	"disable-click": false,
+	"disable-auto-back-and-forth": true,
+	"window-format": "{name}",
+	"format-window-separator": "\n",
+	"window-rewrite-default": "",
+	"window-rewrite": {
+		// Browsers
+		"class<org.chromium.Chromium>": "󰊯",
+		"class<LibreWolf>": "󰈹",
+		"class<org.mozilla.firefox>": "",
+
+		// Terminal and CLI
+		"class<foot>": "",
+		// "class<foot> title<.*vim.*>": "",
+		"class<foot> title<nvim.*>": "",
+
+		// GUI misc
+		"class<org.gnome.Nautilus>": "",
+		"class<org.kde.okular>": "󰈦",
+		"class<org.pwmt.zathura>": "",
+
+		// Gaming
+		"class<com.heroicgameslauncher.hgl>": "󱢿",
+		"class<heroic>": "󱢿",
+		"class<steam>": "󰓓",
+
+		// Messaging
+		"class<org.signal.Signal>": "",
+		"class<discord>": "󰙯",
+
+		// color test
+		//"class<LibreWolf>": "<span color=\"#FFBB00\">f</span>",
+// from sworkstyle:
+// 'balena-etcher' =               	"\r󱊟"
+// 'Bitwarden' =                   	"\r"
+// 'bottles' =				"\r󰼺"
+// 'com.usebottles.bottles' =		"\r󰼺"
+// 'com.github.hluk.copyq' =		"\r󱘣"
+// 'duckstation-qt' =			"\r󰐔"
+// 'Element' =				"\r󰘨"
+// 'com.github.tchx84.Flatseal' = 		"\r󱛟"
+// 'org.gnome.font-viewer' =		"\r󰛖"
+// 'imv' =					"\r"
+// 'org.keepassxc.KeePassXC' =		"\r󱕴"
+// 'libreoffice-calc' = 			"\r"
+// 'libreoffice-writer' =			"\r󱇨"
+// 'org.gnome.Loupe' =			"\r"
+// 'lutris' = 				"\r󰊗"
+// 'net.lutris.Lutris' = 			"\r󰊗"
+// 'mpv' =					"\r"
+// 'io.gitlab.news_flash.NewsFlash' =	"\r󱀁" 
+// 'pavucontrol' = 			"\r󰓃"
+// 'org.pulseaudio.pavucontrol' = 		"\r󰓃"
+// 'pcsx2-qt' = 				"\r󰐔"
+// 'org.musicbrainz.Picard' =		"\r󱚓"
+// 'python3' = 				"\r󰌠"
+// 'org.qutebrowser.qutebrowser' =		"\r󰌓"
+// 'rhythmbox' =				"\r󱝠"
+// 'sleek' =				"\r"
+// 'org.gnome.Software' =			"\r󱩯"
+// 'solaar' = 				"\r"
+// 'org.gnome.Solanum' = 			"\r"
+// 'pinta' =				"\r󱦹"
+// 'piper' =				"\r󰍽"
+// 'virt-manager' =	 		"\r󰍺"
+// 'VSCodium' =				"\r󰨞"
+// 'com.github.xournalpp.xournalpp' = 	"\r󰛓"
+// 'Zotero' =				"\r"
+// 
+// # matching by string
+// '/Godot Engine/' = 			"\r" 
+// '/Wine System Tray/' = 			"\r󰨡"
+// 
+// # Chromium and its PWAs
+// '/Outlook \(PWA\)/' = 			"\r󰴢"
+// '/Microsoft Teams/' =			"\r󰊻"
+// 'chromium' =				"\r󰊯"
+
+// #  Terminal applicationsz
+// # REMEMBER - order is important, so kitty should be last
+// 
+// '/cmus/' =				"\r󰝚"
+// '/todo.txt/' =				"\r󰱒"
+// '/nvim/' =                 		"\r"
+// '/ranger/' =				"\r"
+// 
+// 
+//  Games and Wine
+// 
+// 'battle.net.exe' = 			"\r󰼶"
+// 'itch' =				"\r󰊗"
+// 'RogueLegacy2.x86_64' =			"\r󰺷"
+ 	},
 },
-// }}}
 
 // Temperature {{{
 "temperature": { 

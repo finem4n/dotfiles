@@ -1,0 +1,81 @@
+#|
+This minimal config changes Caps Lock to act as Caps Lock on quick tap, but
+if held, it will act as Left Ctrl. It also changes the backtick/grave key to
+act as backtick/grave on quick tap, but change ijkl keys to arrow keys on hold.
+
+This text between the two pipe+octothorpe sequences is a multi-line comment.
+|#
+
+;; Text after double-semicolons are single-line comments.
+
+#|
+One defcfg entry may be added, which is used for configuration key-pairs. These
+configurations change kanata's behaviour at a more global level than the other
+configuration entries.
+|#
+
+(defcfg
+  #|
+  This configuration will process all keys pressed inside of kanata, even if
+  they are not mapped in defsrc. This is so that certain actions can activate
+  at the right time for certain input sequences. By default, unmapped keys are
+  not processed through kanata due to a Windows issue related to AltGr. If you
+  use AltGr in your keyboard, you will likely want to follow the simple.kbd
+  file while unmapping lctl and ralt from defsrc.
+  |#
+  ;; linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd:
+  linux-dev-names-include (
+    "AT Translated Set 2 keyboard"
+    "SONiX Lanparty BT"
+  )
+  process-unmapped-keys yes
+)
+
+#|
+(deflayer example
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    
+)
+|#
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl
+)
+(deflayer default
+  @grv _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  lctl _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  @meh lalt lmet           _              _    _    
+)
+
+(deflayer arrows
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    lrld _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    left down up   rght _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    
+)
+
+(deflayer mehlayer
+  C-A-S-grv C-A-S-1 C-A-S-2     C-A-S-3 C-A-S-4 C-A-S-5 C-A-S-6 C-A-S-7 C-A-S-8 C-A-S-9 C-A-S-0 C-A-S-- C-A-S-= C-A-S-bspc
+  C-A-S-tab C-A-S-q C-A-S-w     C-A-S-e C-A-S-r C-A-S-t C-A-S-y C-A-S-u C-A-S-i C-A-S-o C-A-S-p C-A-S-[ C-A-S-] C-A-S-\
+  _         C-A-S-a C-A-S-s     C-A-S-d C-A-S-f C-A-S-g C-A-S-h C-A-S-j C-A-S-k C-A-S-l C-A-S-; C-A-S-' C-A-S-ret
+  _         C-A-S-z C-A-S-x     C-A-S-c C-A-S-v C-A-S-b C-A-S-n C-A-S-m C-A-S-, C-A-S-. C-A-S-/ _ 
+  _         _       C-A-S-lmet                  C-A-S-spc               _       _
+)
+
+(defalias
+  ;; meh C-A-S-s ;; maybe i should add tap hold press with capslock???
+  meh (layer-while-held mehlayer)
+  ;; jebnac home row mods i dac jakis nie wiem moze prawy control jako vim layer czy cos
+
+  grv (tap-hold-press 200 200 grv (layer-while-held arrows))
+)

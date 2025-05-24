@@ -18,7 +18,7 @@ if pgrep -x bemenu; then
 else	
 	if [ "$1" == "--drun" ]; then
 		j4-dmenu-desktop --dmenu="bemenu" \
-				--display-binary --term-mode kitty --no-generic --use-xdg-de --case-insensitive
+				--display-binary --term-mode kitty --no-generic --use-xdg-de --case-insensitive -I
 	elif [ "$1" == "--cliphist" ]; then
 		 cliphist list | bemenu --prompt "cliphist:" | cliphist decode | wl-copy
 	fi
