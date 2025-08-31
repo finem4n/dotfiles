@@ -13,6 +13,10 @@
 
 "fixed-center": false,
 
+"niri/workspaces": {
+	"current-only": "true",
+},
+
 // Backlight {{{
 "backlight": {
 	"format":		"{icon}",
@@ -227,8 +231,8 @@
 "pulseaudio": {
         "format": "{icon}",
         "format-muted": "󰖁",
-        "format-bluetooth": "󰗾name subjecto to check",
-        "format-bluetooth-muted": "󰗿 name subject to check",
+        "format-bluetooth": "󰗾",
+        "format-bluetooth-muted": "󰗿",
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"],
             "headphone": "󱡬",
@@ -309,18 +313,24 @@
 		"class<org.chromium.Chromium>": "󰊯",
 		"class<LibreWolf>": "󰈹",
 		"class<org.mozilla.firefox>": "",
+		"class<org.qutebrowser.qutebrowser>": "󰌓",
 
 		// Terminal and CLI
 		"class<foot>": "",
 		// "class<foot> title<.*vim.*>": "",
+		"class<foot> title<cmus.*>": "󰝚",
+		"class<foot> title<lf>": "lf",
 		"class<foot> title<nvim.*>": "",
+		"class<foot> title<.*todo.txt>": "󰄵",
+		"class<foot> title<newsboat -u /home/fineman/syncthing/apps/newsboat/urls -C": "󱀁",
 
 		// GUI misc
-		"class<org.gnome.Nautilus>": "",
+		"class<thunar>": "",
 		"class<org.kde.okular>": "󰈦",
 		"class<org.pwmt.zathura>": "",
 
 		// Gaming
+		"class<com.usebottles.bottles>": "󰼺",
 		"class<com.heroicgameslauncher.hgl>": "󱢿",
 		"class<heroic>": "󱢿",
 		"class<steam>": "󰓓",
@@ -329,33 +339,32 @@
 		"class<org.signal.Signal>": "",
 		"class<discord>": "󰙯",
 
+		// Tools
+		"class<org.keepassxc.KeePassXC>": "󱕴",
+
+
 		// color test
 		//"class<LibreWolf>": "<span color=\"#FFBB00\">f</span>",
 // from sworkstyle:
 // 'balena-etcher' =               	"\r󱊟"
 // 'Bitwarden' =                   	"\r"
-// 'bottles' =				"\r󰼺"
-// 'com.usebottles.bottles' =		"\r󰼺"
 // 'com.github.hluk.copyq' =		"\r󱘣"
 // 'duckstation-qt' =			"\r󰐔"
 // 'Element' =				"\r󰘨"
 // 'com.github.tchx84.Flatseal' = 		"\r󱛟"
 // 'org.gnome.font-viewer' =		"\r󰛖"
 // 'imv' =					"\r"
-// 'org.keepassxc.KeePassXC' =		"\r󱕴"
 // 'libreoffice-calc' = 			"\r"
 // 'libreoffice-writer' =			"\r󱇨"
 // 'org.gnome.Loupe' =			"\r"
 // 'lutris' = 				"\r󰊗"
 // 'net.lutris.Lutris' = 			"\r󰊗"
 // 'mpv' =					"\r"
-// 'io.gitlab.news_flash.NewsFlash' =	"\r󱀁" 
 // 'pavucontrol' = 			"\r󰓃"
 // 'org.pulseaudio.pavucontrol' = 		"\r󰓃"
 // 'pcsx2-qt' = 				"\r󰐔"
 // 'org.musicbrainz.Picard' =		"\r󱚓"
 // 'python3' = 				"\r󰌠"
-// 'org.qutebrowser.qutebrowser' =		"\r󰌓"
 // 'rhythmbox' =				"\r󱝠"
 // 'sleek' =				"\r"
 // 'org.gnome.Software' =			"\r󱩯"
@@ -380,7 +389,6 @@
 // #  Terminal applicationsz
 // # REMEMBER - order is important, so kitty should be last
 // 
-// '/cmus/' =				"\r󰝚"
 // '/todo.txt/' =				"\r󰱒"
 // '/nvim/' =                 		"\r"
 // '/ranger/' =				"\r"

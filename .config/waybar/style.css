@@ -169,6 +169,7 @@ window#waybar {
 
 #pulseaudio.bluetooth {
 	background-color: @blue;
+	color: @bg_dim
 }
 
 /* pulseaudio#source */

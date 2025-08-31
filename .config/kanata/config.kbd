@@ -1,38 +1,17 @@
-#|
-This minimal config changes Caps Lock to act as Caps Lock on quick tap, but
-if held, it will act as Left Ctrl. It also changes the backtick/grave key to
-act as backtick/grave on quick tap, but change ijkl keys to arrow keys on hold.
-
-This text between the two pipe+octothorpe sequences is a multi-line comment.
-|#
-
-;; Text after double-semicolons are single-line comments.
-
-#|
-One defcfg entry may be added, which is used for configuration key-pairs. These
-configurations change kanata's behaviour at a more global level than the other
-configuration entries.
-|#
-
 (defcfg
-  #|
-  This configuration will process all keys pressed inside of kanata, even if
-  they are not mapped in defsrc. This is so that certain actions can activate
-  at the right time for certain input sequences. By default, unmapped keys are
-  not processed through kanata due to a Windows issue related to AltGr. If you
-  use AltGr in your keyboard, you will likely want to follow the simple.kbd
-  file while unmapping lctl and ralt from defsrc.
-  |#
-  ;; linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd:
-  linux-dev-names-include (
-    "AT Translated Set 2 keyboard"
-    "SONiX Lanparty BT"
+  linux-dev-names-exclude (
+    "beekeeb piantor"
+    "beekeeb piantor Consumer Control"
+    "beekeeb piantor Keyboard"
+    "beekeeb piantor System Control"
+    "Logitech G305"
   )
+
   process-unmapped-keys yes
 )
 
 #|
-(deflayer example
+(deflayer pass_all
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -41,13 +20,107 @@ configuration entries.
 )
 |#
 
+#|
+(deflayer noinputs
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX             XX             XX   XX   
+)
+|#
+
 (defsrc
+  esc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rctl
 )
+
+(defvar
+  tap-time 250
+  hold-time 250 
+)
+
+(defalias
+  ;; NHMR
+  x (tap-hold $tap-time $hold-time x lalt)
+  c (tap-hold $tap-time $hold-time c lctl)
+  v (tap-hold $tap-time $hold-time v lmet)
+  m (tap-hold $tap-time $hold-time m rmet)
+  , (tap-hold $tap-time $hold-time , rctl)
+  . (tap-hold $tap-time $hold-time . lalt)
+
+  ;; Oppa Callum Style
+  ;; lower aka nav
+  ;; lwr (layer-while-held lower)
+  ;; upr (layer-while-held upper)
+  
+  ;; Mouse Home Row Mods and others
+  mse (layer-while-held mouse_companion)
+
+  mq M-S-q
+  mw C-w
+  mr C-r
+  ;; mt (tap-hold $tap-time $hold-time C-t (macro C-S-t))
+  mt C-t
+
+  ma C-a
+  ms A-left
+  md C-pgdn
+  mf C-pgup
+  mg A-rght
+  
+  mz (tap-hold $tap-time $hold-time C-z (macro C-A-z))
+  mx (tap-hold $tap-time $hold-time C-x lalt)
+  mc (tap-hold $tap-time $hold-time C-c lctl)
+  mv (tap-hold $tap-time $hold-time C-v lmet)
+
+  mm lmet
+  m, lctl
+  m. lalt
+
+  sup M-S-tab
+  sdn M-tab
+  ;; mx (tap-hold $tap-time $hold-time )
+  ;; mc (tap-hold $tap-time $hold-time )
+  ;; mv (tap-hold $tap-time $hold-time )
+  ;; undo
+  ;; redo
+  ;; mouse buttons
+  ;; workspaces
+
+  ;; a (tap-hold $tap-time $hold-time A-L lalt)
+  ;; s (tap-hold $tap-time $hold-time s lsft)
+  ;; d (tap-hold $tap-time $hold-time d lctl)
+  ;; f (tap-hold $tap-time $hold-time f lmet)
+
+  vim (layer-while-held navimation)
+
+  ;; meh C-A-S-s ;; maybe i should add tap hold press with capslock???
+  meh  (multi lctl lalt lsft)
+  ;; meh (layer-while-held mehlayer)
+  ;; jebnac home row mods i dac jakis nie wiem moze prawy control jako vim layer czy cos
+
+  grv (tap-hold-press 200 200 grv (layer-while-held arrows))
+)
+
+
+;; left ctrl jako nav layer, do tego f-ki na gorze
+;; ' jako ctrl
+;; super jako nav layer z mouse, wtedy ctrl jako left alt
+;; gdzies trzeba wrzucic switch do capsa
+;; prawy ctrl jako layer z numerkami albo fkami hmmmm
+;; gdzies jakis switch do mouse layer
+;; something fairly normal
+;; TODO wrzuc ctrl to escape
+;; ' as ctrl hold tap
+
+
+
+#|
 (deflayer default
   @grv _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -55,8 +128,84 @@ configuration entries.
   _    _    _    _    _    _    _    _    _    _    _    _
   @meh lalt lmet           _              _    _    
 )
+|#
+
+
+;; TODO add mouse with normal left alt?
+;; TODO add vim with normal left gui? albo mouse i vim jako jedno a gdzies trzeba jeszcze dac fki
+;; TODO add caps word somewhere
+;; TODO add meh as both ctrl
+;; TODO add layer switcher for gaming and persistent mouse or sth
+;; zamien escape na cos ciekawego
+;; NHMR - (Not) Home Row Mods - aka Bottom Row Mods (No Shift Variant)
+(deflayer default
+  esc
+  grv  _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  _    _    _    _    _    _    _    _    _    _    _    _    _
+  esc  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    @x   @c   @v   _    _    @m   @,   @.   _    _
+  @meh @vim @mse           _              _    _    
+)
+;; od lewej do prawej meh vim/media mouse
+;; prawy control to niech bedzie symbol layer
+
+
+#|
+(deflayer default
+  @grv _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  lctl @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  @meh _    @mse           _              _    _    
+)
+|#
+
+;; callum testing
+;; (deflayer default
+;;   @grv _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   lctl _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _
+;;   @meh _    @lwr           _              @upr    _    
+;; )
+
+#|
+(deflayer lower
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   @a   @s   @d   @f   XX   left down up   rght XX   XX   XX
+  XX   XX   XX   XX   XX   XX   home pgdn pgup end  XX   XX
+  XX   XX   XX             XX             XX   XX   
+)
+|#
+
+#|
+(deflayer upper
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   1    2    3    XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   4    5    6    XX   XX   @j   @k   @l   @;   XX   XX
+  XX   XX   7    8    9    XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX             0              XX   XX   
+)
+|#
+
+;; mouse layer
+;; TODO toggle na ctrl
+;; add mouse buttons - (win alt spc????)
+;; przesunac to tak zeby to md bylo na mf
+(deflayer mouse_companion
+;; tab jako workspace prev
+;; caps jako workspace next
+  XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  @sup @mq  @mw  XX   @mr  @mt  XX   XX   XX   XX   XX   XX   XX   XX
+  @sdn @ma  @ms  @md  @mf  @mg  XX   XX   XX   XX   XX   XX   XX
+  lsft @mz  @mx  @mc  @mv  XX   XX   @mm  @m,  @m.  XX   rsft
+  XX   XX   XX             XX             XX   XX   
+)
 
 (deflayer arrows
+  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    lrld _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    left down up   rght _    _    _
@@ -64,6 +213,38 @@ configuration entries.
   _    _    _              _              _    _    
 )
 
+;; TODO dodac tutaj NHMR i media i sposob na zmiane do gaming
+(deflayer navimation
+  _
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
+  _    _    _    _    lrld _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    left down up   rght _    _    _
+  XX   _    _    _    XX   XX   home pgdn pgup end  XX   XX
+  _    _    _              _              _    _    
+)
+
+(deflayer gaming
+  esc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl
+)
+
+;; gaming potrzebuje layeru z fkami - tam moge zaimplementowac zmiane layeru
+;; niech to bedzie pod lctl i tak samo w normalnym niech bedzie ta zmiana tam
+
+(deflayer gaming_opts
+  XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX             XX             XX   XX   
+)
+
+#|
 (deflayer mehlayer
   C-A-S-grv C-A-S-1 C-A-S-2     C-A-S-3 C-A-S-4 C-A-S-5 C-A-S-6 C-A-S-7 C-A-S-8 C-A-S-9 C-A-S-0 C-A-S-- C-A-S-= C-A-S-bspc
   C-A-S-tab C-A-S-q C-A-S-w     C-A-S-e C-A-S-r C-A-S-t C-A-S-y C-A-S-u C-A-S-i C-A-S-o C-A-S-p C-A-S-[ C-A-S-] C-A-S-\
@@ -71,11 +252,4 @@ configuration entries.
   _         C-A-S-z C-A-S-x     C-A-S-c C-A-S-v C-A-S-b C-A-S-n C-A-S-m C-A-S-, C-A-S-. C-A-S-/ _ 
   _         _       C-A-S-lmet                  C-A-S-spc               _       _
 )
-
-(defalias
-  ;; meh C-A-S-s ;; maybe i should add tap hold press with capslock???
-  meh (layer-while-held mehlayer)
-  ;; jebnac home row mods i dac jakis nie wiem moze prawy control jako vim layer czy cos
-
-  grv (tap-hold-press 200 200 grv (layer-while-held arrows))
-)
+|#

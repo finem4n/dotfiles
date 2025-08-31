@@ -2,7 +2,7 @@
 # vim:foldmethod=marker
 # fineman's script
 
-source $HOME/.scripts/bemenu-opts.sh
+# source $HOME/.scripts/bemenu-opts.sh
 
 if [ "$#" -ne 1 ]; then
     echo "Illegal number of parameters"

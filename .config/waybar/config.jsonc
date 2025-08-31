@@ -12,6 +12,7 @@
 	"group/privacygroup",
 	"sway/scratchpad",
 	"sway/workspaces", 
+	"niri/workspaces", 
 ],
 
 "modules-center": [
