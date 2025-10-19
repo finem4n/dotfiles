@@ -3,4 +3,5 @@
 cache-file ~/syncthing/apps/newsboat/cache.db
 include config-shared
 
-browser "flatpak run org.mozilla.firefox --new-tab %u &>/dev/null & disown"
+# browser "flatpak run org.mozilla.firefox --new-tab %u &>/dev/null & disown"
+browser "firefox --new-tab %u &>/dev/null & disown"

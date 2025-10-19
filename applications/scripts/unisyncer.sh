@@ -8,6 +8,8 @@ KINDLE="/dev/disk/by-id/usb-Kindle_Internal_Storage_G090WF061476027R-0:0"
 # FIX get mount points from udisksctl info
 # IdUUID = 685F-DB32 
 
+# TODO  zamien to /run/media/fineman/685F-DB32 na jakis $BB_PATH czy cos
+
 function start_bb {
   check_avail $BBQ5 BBQ5
 }
@@ -26,19 +28,27 @@ function sync_bb {
 
   # More folders cause why not
   echo "Syncing books"
-  unison -fat -auto $HOME/syncthing/bbq5/device_itself/books/ /run/media/fineman/685F-DB32/books/ -prefer $HOME/syncthing/bbq5/device_itself/books/ 
+  unison -fat -auto $HOME/syncthing/bbq5/device_itself/books/ /run/media/fineman/685F-DB32/books/ 
   echo "Syncing camera"
-  unison -fat -auto $HOME/syncthing/bbq5/device_itself/camera/ /run/media/fineman/685F-DB32/camera/ -prefer $HOME/syncthing/bbq5/device_itself/camera/ 
+  unison -fat -auto $HOME/syncthing/bbq5/device_itself/camera/ /run/media/fineman/685F-DB32/camera/ 
   echo "Syncing documents"
-  unison -fat -auto $HOME/syncthing/bbq5/device_itself/documents/ /run/media/fineman/685F-DB32/documents/ -prefer $HOME/syncthing/bbq5/device_itself/documents/ 
+  unison -fat -auto $HOME/syncthing/bbq5/device_itself/documents/ /run/media/fineman/685F-DB32/documents/ -ignore 'Path notes'
   echo "Syncing downloads"
-  unison -fat -auto $HOME/syncthing/bbq5/device_itself/downloads/ /run/media/fineman/685F-DB32/downloads/ -prefer $HOME/syncthing/bbq5/device_itself/downloads/ 
+  unison -fat -auto $HOME/syncthing/bbq5/device_itself/downloads/ /run/media/fineman/685F-DB32/downloads/ 
   echo "Syncing photos"
-  unison -fat -auto $HOME/syncthing/bbq5/device_itself/photos/ /run/media/fineman/685F-DB32/photos/ -prefer $HOME/syncthing/bbq5/device_itself/photos/ 
+  unison -fat -auto $HOME/syncthing/bbq5/device_itself/photos/ /run/media/fineman/685F-DB32/photos/ 
   echo "Syncing videos"
-  unison -fat -auto $HOME/syncthing/bbq5/device_itself/videos/ /run/media/fineman/685F-DB32/videos/ -prefer $HOME/syncthing/bbq5/device_itself/videos/ 
+  unison -fat -auto $HOME/syncthing/bbq5/device_itself/videos/ /run/media/fineman/685F-DB32/videos/ 
   echo "Syncing voice"
-  unison -fat -auto $HOME/syncthing/bbq5/device_itself/voice/ /run/media/fineman/685F-DB32/voice/ -prefer $HOME/syncthing/bbq5/device_itself/voice/ 
+  unison -fat -auto $HOME/syncthing/bbq5/device_itself/voice/ /run/media/fineman/685F-DB32/voice/ 
+  echo "Syncing zettelkasten"
+  # TODO czy nie lepiej byloby to zamienic na rsync?
+  unison -fat -auto $HOME/notes/zettelkasten/ /run/media/fineman/685F-DB32/documents/notes/zettelkasten/ 
+  echo "Syncing studieren zettelkasten"
+  # TODO czy nie lepiej byloby to zamienic na rsync?
+  unison -fat -auto $HOME/notes/studia_zk/ /run/media/fineman/685F-DB32/documents/notes/studia_zk/ -ignore 'Path .stfolder'
+  echo "Syncing BlacbBerry zettelkasten"
+  unison -fat -auto $HOME/notes/zk_bb/ /run/media/fineman/685F-DB32/documents/notes/zk_bb/ 
 }
 
 function sync_kindle {

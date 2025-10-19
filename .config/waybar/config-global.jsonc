@@ -322,6 +322,7 @@
 		"class<foot> title<lf>": "lf",
 		"class<foot> title<nvim.*>": "",
 		"class<foot> title<.*todo.txt>": "󰄵",
+		"class<kitty> title<todo.txt>": "󰄵",
 		"class<foot> title<newsboat -u /home/fineman/syncthing/apps/newsboat/urls -C": "󱀁",
 
 		// GUI misc
@@ -338,6 +339,7 @@
 		// Messaging
 		"class<org.signal.Signal>": "",
 		"class<discord>": "󰙯",
+		"class<com.discordapp.Discord>": "󰙯",
 
 		// Tools
 		"class<org.keepassxc.KeePassXC>": "󱕴",

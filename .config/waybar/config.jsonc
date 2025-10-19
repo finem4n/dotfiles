@@ -8,11 +8,10 @@
 
 "modules-left":	[
 	"idle_inhibitor",
-	"custom/mako",
+	// "custom/mako",
 	"group/privacygroup",
 	"sway/scratchpad",
-	"sway/workspaces", 
-	"niri/workspaces", 
+	"sway/workspaces"
 ],
 
 "modules-center": [
@@ -52,7 +51,7 @@
 
 "modules-left": [
 	"idle_inhibitor",
-	"custom/mako",
+	// "custom/mako",
 	"group/privacygroup",
 	"sway/scratchpad",
         "sway/workspaces", 
@@ -94,7 +93,7 @@
 
 "modules-left": [
 	"idle_inhibitor",
-	"custom/mako",
+	// "custom/mako",
 	"group/privacygroup",
 	"sway/scratchpad",
         "sway/workspaces", 

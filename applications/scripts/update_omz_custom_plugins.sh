@@ -30,4 +30,4 @@ up_the_bingo_date () {
 }
 
 omz_custom_plugins
-up_the_bingo_date
+# up_the_bingo_date
